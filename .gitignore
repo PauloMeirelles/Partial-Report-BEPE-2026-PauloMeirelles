@@ -1,0 +1,12 @@
+.vscode
+indent.log
+Deducoes-Paulo.aux
+Deducoes-Paulo.log
+Deducoes-Paulo.synctex.gz
+Deducoes-Paulo.toc
+Deducoes-Paulo.fdb_latexmk
+Deducoes-Paulo.fls
+Deducoes-Paulo.bbl
+Deducoes-Paulo.blg
+# build/
+.vscode/

@@ -1,0 +1,169 @@
+\chapter{Relatório científico parcial}
+
+Neste relatório científico parcial resumido são sintetizadas as atividades realizadas pelo outorgado durante os primeiros seis meses de doutorado (01/04/2026 - 05/10/2026), sob a vigência do projeto FAPESP (processo n$^{\circ}$ 2025/14072-0). As atividades descritas incluem os desenvolvimentos preliminares da pesquisa, as atividades realizadas no período e as publicações científicas. De forma complementar, é apresentado um cronograma atualizado do projeto, incluindo o plano de atividades para o próximo período, que inclui o estágio de pesquisa no exterior.
+
+%===================================================
+%===================================================
+\section{Resumo do projeto proposto}
+
+A pesquisa de doutorado tem como objetivo principal o desenvolvimento de uma ferramenta computacional para a simulação completa do processo de liquefação em meios porosos saturados, abrangendo desde a fase de pré-liquefação até o escoamento pós-liquefação com mudança topológica. A liquefação é caracterizada pela perda abrupta de rigidez e resistência do esqueleto sólido em decorrência do aumento da poropressão em condições não drenadas, podendo ser desencadeada por carregamentos sísmicos ou estáticos.
+
+Para tanto, propõe-se o acoplamento entre uma formulação poroelastoplástica via Método dos Elementos Finitos (FEM) posicional, para a representação da matriz sólida em deformações moderadas, e uma formulação para o escoamento de fluido não newtoniano de Bingham via Método dos Elementos Finitos com Partículas (PFEM), para a simulação do regime pós-liquefação. A formulação poroelastoplástica incorpora o critério de Drucker--Prager com encruamento misto. A estratégia de acoplamento é sequencial, com a transição entre os regimes definida por critérios físicos baseados na evolução da poropressão e da deformação plástica equivalente.
+
+%===================================================
+%===================================================
+\section{Realizações do período}
+
+Neste período foram realizadas atividades relacionadas ao desenvolvimento da pesquisa de Doutorado, como a participação em estágio de docência, publicação de artigo científico em congresso internacional, extensão do código computacional desenvolvido pelo outorgado no contexto da poroelastoplasticidade e exame de qualificação ao doutorado, conforme descrito a seguir:
+
+\begin{enumerate}
+    \item Participação no Estágio Supervisionado em Docência pelo PAE -- Programa de Aperfeiçoamento de Ensino;
+    \item Publicação de artigo em congresso internacional;
+    \item Extensão do programa para análise de sólidos porosos baseado no Método dos Elementos Finitos em formulação posicional desenvolvido durante o mestrado, do 2D para o 3D;
+    \begin{enumerate}
+        \item Modificações destinadas à redução do custo computacional;
+        \item Extensão do código 2D para o 3D;
+        \item Início da implementação do critério de Drucker-Prager não associativo;
+    \end{enumerate}
+    \item Extensão do programa para análise de escoamentos incompressíveis via Navier-Stokes-Brinkman pelo Método dos Elementos Finitos;
+    \begin{enumerate}
+        \item Modificações destinadas à redução do custo computacional;
+    \end{enumerate}
+    \item Implementação da variação espacial e temporal da porosidade e da permeabilidade;
+    \item Realização do exame de qualificação ao Doutorado.
+\end{enumerate}
+
+%===================================================
+\subsection{Estágio Supervisionado em Docência pelo PAE}
+%===================================================
+
+No período de vigência da bolsa, o outorgado realizou o Estágio Supervisionado em Docência por meio do Programa de Aperfeiçoamento de Ensino (PAE), junto às disciplinas SET0183-6 -- Mecânica dos Sólidos I (1º semestre de 2026) e SET0184-6 -- Mecânica dos Sólidos II (2º semestre de 2026, em andamento), ambas ministradas pelo Prof. Dr. Ayrton Ribeiro Ferreira, no Departamento de Engenharia de Estruturas da Escola de Engenharia de São Carlos.
+
+As atividades desenvolvidas no estágio são descritas a seguir:
+
+\begin{enumerate}
+    \item Preparação e atualização de listas de exercícios de acordo com o conteúdo ministrado;
+    \item Atualização da página da disciplina no decorrer do curso;
+    \item Atendimento a alunos para esclarecimento de dúvidas e resolução de exercícios;
+    \item Auxílio na aplicação das avaliações.
+\end{enumerate}
+
+%===================================================
+\subsection{Publicação de artigo em congresso internacional}
+%===================================================
+
+Durante o período de vigência da bolsa, o artigo intitulado ``A Modular Computational Framework for Large Deformation Poroelasticity and Fluid-Poroelastic Structure Interaction'' foi aceito para publicação e apresentação no 10th International Symposium on Solid Mechanics -- MECSOL2026, a ser realizado em São José dos Campos, SP, Brasil, entre 19 e 21 de outubro de 2026.
+
+O trabalho apresenta a formulação modular desenvolvida para problemas de poroelasticidade em grandes deformações e de interação fluido-estrutura poroelástica, que está diretamente relacionada ao desenvolvimento da presente pesquisa de doutorado. A apresentação do trabalho contribuirá para a divulgação dos resultados parciais da pesquisa e para a discussão com a comunidade científica.
+
+%===================================================
+\subsection{Extensão do programa para análise de sólidos porosos}
+%===================================================
+
+Durante o mestrado, foi desenvolvido um código para análise bidimensional de sólidos em formulação posicional do Método dos Elementos Finitos. Este código foi utilizado como base para a extensão ao caso tridimensional e para a incorporação dos efeitos poroelásticos. As principais modificações e implementações são descritas a seguir.
+
+%===================================================
+\subsubsection{Modificações para redução do custo computacional}
+%===================================================
+
+A extensão do código do 2D para o 3D e a inclusão do acoplamento poroelástico aumentam significativamente o custo computacional, tanto pelo maior número de graus de liberdade quanto pela necessidade de resolver o sistema acoplado sólido-fluido. Visando mitigar esse problema, foram adotadas as seguintes medidas:
+
+\begin{enumerate}
+    \item Adaptação do código computacional para uso de solver iterativo (FGMRES -- \textit{Flexible generalized minimum residual}) da biblioteca PETSc \cite{petsc-web-page}, uma vez que o processo de montagem e solução do sistema é uma das etapas mais custosas. O solver iterativo já vinha sendo utilizado por outros membros do grupo e mostrou-se significativamente menos custoso;
+    \item Reorganização das classes e funções com uso de herança e polimorfismo, tornando o código mais genérico e facilitando a implementação de novas funcionalidades;
+    \item Padronização da compilação com CMake\footnote{Disponível em: $<$https://cmake.org/$>$.}, alinhando o código ao padrão adotado pelo grupo de pesquisa.
+\end{enumerate}
+
+%===================================================
+\subsubsection{Generalização do código de dinâmica dos sólidos para o caso tridimensional}
+%===================================================
+
+Uma vez organizadas as classes e suas derivadas com matrizes e vetores apropriados, a generalização para o caso tridimensional do programa para a análise de sólidos utilizando o método dos elementos finitos em formulação posicional \cite{coda2003exact} foi feita de forma mais rápida, aproveitando diversas classes já existentes no 2D.
+
+Foram implementados elementos sólidos tetraédricos com funções de forma de aproximação linear (TET4), quadrática (TET10) e cúbica (TET20). A integração temporal é realizada pelo método $\alpha$-generalizado \cite{chung1993time}, que permite controle da dissipação de altas frequências. A geração de malha é feita com o software Gmsh \cite{geuzaine2009gmsh} e a visualização com o Paraview \cite{ahrens2005paraview}.
+
+%===================================================
+\subsubsection{Início da implementação do critério de Drucker-Prager}
+%===================================================
+
+Foi iniciada a implementação do modelo elastoplástico com critério de Drucker-Prager e encruamento misto (isotrópico e cinemático) para a matriz sólida. A formulação termodinâmica foi estabelecida com base na desigualdade de Clausius-Duhem, e as leis de evolução foram derivadas do princípio da máxima dissipação. O algoritmo de retorno implícito (\textit{return mapping}) está em desenvolvimento, com a matriz Hessiana consistente adaptada para o caso não associativo.
+
+%===================================================
+\subsection{Extensão do programa para análise de escoamentos incompressíveis}
+%===================================================
+
+O código para análise de escoamentos incompressíveis via equações de Navier-Stokes-Brinkman foi estendido para incorporar os efeitos da variação espacial e temporal da porosidade e permeabilidade com modelo de Kozeny-Carman, e para o desenvolvimento de solução via equação de difusão para movimentação da malha auxiliar em problemas que envolvem interação fluido-estrutura porosa com descrição Arbitrary Lagrangian-Eulerian (ALE). As principais modificações e implementações são descritas a seguir.
+
+%===================================================
+\subsubsection{Modificações para redução do custo computacional}
+%===================================================
+
+Assim como no código de sólidos, foram adotadas medidas para redução do custo computacional:
+
+\begin{enumerate}
+    \item Utilização de solver iterativo (FGMRES) em substituição ao solver direto (MUMPS), reduzindo o tempo de processamento;
+    \item Reorganização das classes e funções, aproveitando a estrutura do código de sólidos para facilitar o acoplamento entre os domínios;
+    \item Padronização da compilação com CMake, alinhando o código ao padrão do grupo.
+\end{enumerate}
+
+%===================================================
+\subsection{Variação da porosidade e permeabilidade espacial e temporal}
+%===================================================
+
+A formulação poroelástica foi estendida para considerar a variação da porosidade de forma implícita no tempo e no espaço. A porosidade lagrangiana $\phi^f$ é relacionada à porosidade euleriana $\eta^f$ através do jacobiano de deformação $J$, e a permeabilidade é atualizada com base no modelo de Kozeny-Carman, que relaciona a permeabilidade à porosidade.
+
+Essa dependência é fundamental para capturar a interação fluido-sólido em meios porosos saturados, especialmente durante a fase de pré-liquefação, em que a poropressão evolui e a tensão efetiva se reduz. A mesma abordagem é aplicada tanto ao código de sólidos quanto ao de escoamentos incompressíveis, garantindo consistência na representação do meio poroso.
+
+%===================================================
+\subsection{Exame de qualificação ao doutorado}
+%===================================================
+
+Em 25 de setembro de 2026 foi realizado o exame de qualificação ao doutorado, intitulado ``Análise numérica de meios porosos saturados com mudança de fase: Liquefação e pós-liquefação''. A banca examinadora foi composta pelo Prof. Dr. Ayrton Ribeiro Ferreira (SET -- EESC) e pelo Prof. Associado Fabrício Simeoni Sousa (ICMC -- USP), e o candidato foi aprovado.
+
+A partir das sugestões recebidas durante o exame, estão sendo incorporadas melhorias ao desenvolvimento da pesquisa, com ênfase na definição mais precisa dos critérios de liquefação e no detalhamento da estratégia de transição entre as formulações FEM e PFEM.
+
+%===================================================
+\section{Plano de Gestão de Dados}
+%===================================================
+
+Nesta seção será descrito como o Plano de Gestão de Dados proposto está sendo seguido e eventuais modificações.
+
+%===================================================
+\subsection{Coleta de dados}
+%===================================================
+
+Como o trabalho trata da análise numérica da liquefação em meios porosos saturados a partir do desenvolvimento de uma formulação computacional híbrida, os dados estão sendo gerados com os resultados das simulações numéricas realizadas por intermédio de algoritmos computacionais em desenvolvimento. Os dados gerados até o momento estão sendo obtidos por meio de uma formulação poroelástica particionada forte, com FEM posicional para a matriz sólida e formulação estabilizada de Navier-Stokes-Brinkman para o fluido intersticial. Posteriormente, serão gerados dados por meio do acoplamento entre o FEM e o PFEM, com o modelo de Bingham para o escoamento pós-liquefação. Os códigos são implementados em linguagem C++ com paralelização, visando à redução do tempo de processamento.
+
+Todas as planilhas eletrônicas confeccionadas com os resultados das análises, assim como os arquivos de pós-processamento, estão sendo organizados de forma a facilitar pesquisas e consultas posteriores. Além disso, durante a geração dos dados e a seleção dos resultados, está sendo realizada a revisão de tudo o que está sendo produzido de forma mais objetiva, e a forma como estavam armazenados e dispostos facilitou esse processo.
+
+%===================================================
+\subsection{Documentação e Metadados}
+%===================================================
+
+A captura de todos os dados está sendo acompanhada de documentação descritiva,, contendo detalhadamente todo o material utilizado e consultado, os parâmetros, os métodos e as técnicas utilizados em cada etapa. Para facilitar a revisão e a eliminação de erros que possam surgir, todos os relatórios e dados estão sendo armazenados em pastas separadas para cada problema analisado. Isso facilitará a consulta de dados futuros e, caso seja necessário simular novamente o exemplo com outros parâmetros, permitirá o aproveitamento dos dados de entrada existentes.
+
+%===================================================
+\subsection{Ética e Conformidade Legal}
+%===================================================
+
+Todas as etapas da pesquisa até o momento estão sendo conduzidas em conformidade com os protocolos éticos e os regulamentos institucionais aplicáveis. Recorre-se à Agência USP de Inovação (AUSPIN) quando há necessidade de orientação a respeito de questões burocráticas e legais relacionadas a direitos autorais e propriedade intelectual.
+
+%===================================================
+\subsection{Armazenamento e Backup}
+%===================================================
+
+Com a utilização de softwares de código livre, os resultados quantitativos estão sendo dispostos e armazenados em planilhas eletrônicas, para a produção de metadados textuais e visuais, abrangendo o volume de dados armazenado todo o material de pré-processamento (arquivos de entrada dos códigos) e os resultados numéricos. Os dados estão sendo armazenados fisicamente no computador do Laboratório de Informática e Mecânica Computacional (LIMC) do Departamento de Engenharia de Estruturas (SET) e também na nuvem, utilizando o acesso institucional da USP. AAs pastas referentes a cada problema ou exemplo analisado contêm os arquivos de cabeçalho do C++ (formato .h), que possuem os dados de entrada para o problema a ser simulado no código; os arquivos de saída do código a serem lidos pelo ParaView (formato .vtu); os dados utilizados para a geração dos gráficos, em formato .tex; e os gráficos gerados, em formato .pdf. Os dados textuais estão sendo armazenados em formato .pdf e os dados de imagem em formato .png. Por meio do compartilhamento na nuvem, utilizando o repositório do GitHub e o Google Drive, todos os envolvidos (supervisor e membros do grupo de pesquisa) têm acesso aos dados coletados, facilitando a troca de dados e a interação com o grupo de pesquisa por meio do compartilhamento de resultados entre os membros. Entretanto, somente o beneficiário e seu supervisor podem editá-los.
+
+%===================================================
+\subsection{Seleção e Preservação}
+%===================================================
+
+Todos os dados gerados e coletados, bem como os algoritmos computacionais desenvolvidos, estão sendo mantidos, preservados e armazenados de forma a perdurarem a longo prazo. Já organizados e interpretados, esses dados são disponibilizados para a comunidade científica por meio do Repositório da Produção USP -- ReP\footnote{Disponível em: $<$https://repositorio.usp.br/$>$.} e, também, por meio da aceitação das publicações associadas em periódicos e anais de congressos.
+
+Desde que os autores sejam devidamente citados, os dados coletados e criados poderão ser reproduzidos para fins de estudo e pesquisa em documentos públicos, como artigos científicos e relatórios técnicos, quando não envolverem aspectos éticos ou legais. O período anterior ao compartilhamento e o período durante o qual os dados serão preservados e disponibilizados podem variar, mas espera-se uma ampla disponibilização dos dados após o término do projeto.
+
+%===================================================
+\subsection{Responsabilidade}
+%===================================================
+
+A captura, a coleta, o armazenamento, a organização e o compartilhamento dos dados são de inteira responsabilidade do beneficiário. Todos os resultados das implementações realizadas são disponibilizados para a comunidade científica, mas apenas o beneficiário e seu supervisor têm acesso à edição dos dados, evitando modificações nos dados e resultados por terceiros.

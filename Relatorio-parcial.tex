@@ -1,0 +1,186 @@
+\documentclass[a4paper,12pt,oneside,brazil,sumario=tradicional]{abntex2}
+
+\linespread{1.3} % Espaço entre as linhas.
+\setlength{\parindent}{1.0cm} % Identação padrão
+\headheight = 0.5cm
+\headsep = 0.5cm
+\usepackage[top=2.5cm, bottom=2.0cm, left=2.5cm, right=2.0cm]{geometry} % margens da folha
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc} % acentos
+\usepackage{amsmath}
+%\usepackage{amsfonts} % letras mathfrak
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{multicol,lipsum}
+\usepackage{mathtools}
+\usepackage{makecell}
+\usepackage{enumitem} % Enumerate, Itemize
+\usepackage{microtype} % para melhorias de justificação
+\usepackage{amsmath,amssymb,bm}
+%% pacotes para tabelas
+\usepackage{booktabs}  % table
+\usepackage{float} % floating table
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+
+% Configurações de aparência do PDF final
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+	%pagebackref=true,
+	pdftitle={\@title}, 
+	pdfauthor={\@author},
+	pdfsubject={\imprimirpreambulo},
+	pdfcreator={LaTeX with abnTeX2},
+	pdfkeywords={abnt}{latex}{abntex}{USPSC}{trabalho acadêmico}, 
+	colorlinks=true,       		% false: boxed links; true: colored links
+	linkcolor=blue,        % BLUE  	% color of internal links 
+	citecolor=blue,        	% BLUE	% color of links to bibliography
+	filecolor=magenta,   % MAGENTA   		% color of file links
+	urlcolor=blue,% BLUE
+	bookmarksdepth=4
+}
+\makeatother
+
+\definecolor{LightGray}{gray}{0.9}
+
+\usepackage{titlesec}
+
+% \titleformat{\chapter}
+% {\normalfont\fontsize{16}{0}\bfseries}{\thechapter}{1em}{} %\fontfamily{phv}
+
+% \titleformat{\section}
+% {\normalfont\fontsize{14}{0}\bfseries}{\thesection}{1em}{} %\fontfamily{phv}
+
+% \titleformat{\subsection}
+% {\normalfont\fontsize{13}{0}\bfseries}{\thesubsection}{1em}{}
+
+% \titleformat{\subsubsection}
+% {\normalfont\fontsize{12}{0}\bfseries}{\thesubsubsection}{1em}{}
+
+% \titleformat{\paragraph}
+% {\normalfont\fontsize{11}{0}\bfseries}{\theparagraph}{1em}{}
+
+% pacote para referências bibliográficas
+\usepackage[alf,abnt-emphasize=bf]{abntex2cite}
+
+% serif font no título:
+\renewcommand{\sfdefault}{\rmdefault} % No serif fonts, use roman (times)
+
+% Títulos em negrito:
+\renewcommand{\ABNTEXchapterfont}{\normalfont\sffamily\bfseries}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  INICIO  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\selectlanguage{brazil}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAPA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\thispagestyle{empty}
+\setcounter{page}{1}
+\begin{center}
+	Relatório parcial apresentado à FAPESP relativo ao projeto N$^{\circ}$ \textbf{2025/14072-0} para submissão de proposta de estágio de pesquisa no exterior (BEPE)\\
+	\textbf{Período referente ao relatório:} 01/04/2026 à 05/10/2026
+\end{center}
+
+\vspace{2cm}
+
+\begin{center}
+	\large\textbf{Análise numérica dinâmica de meios porosos saturados considerando liquefação e escoamento pós-liquefação}
+\end{center}
+
+\vspace{2cm}
+
+\begin{center}
+
+	\large\textsc{Universidade de São Paulo}
+
+	\large\textsc{Escola de Engenharia de São Carlos}
+
+	\large\textsc{Departamento de Engenharia de Estruturas}
+
+\end{center}
+
+\vspace{2.cm}
+
+\begin{center}
+Bolsista: Paulo Henrique de Freitas Meirelles\\
+Orientador/Supervisor: Prof. Dr. Rodolfo André Kuche Sanches
+\end{center}
+
+\vfill
+
+\begin{center}
+	\textsc{São Carlos}\\
+	Outubro/\the\year
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%% FOLHA DE ROSTO (descomentar caso necessário) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\input{PreChapters/Resumo.tex}
+% ----------------------------------------------------------
+%\input{PreChapters/Abstract.tex}
+
+%%%%%%%%%%%%%%%%%%% CORPO DO TEXTO %%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\tableofcontents*
+\thispagestyle{empty} % Remove a numeração desta página específica
+
+\newpage
+
+\textual
+
+\input{Secoes/1-Relatorio-parcial.tex}
+
+\input{Secoes/2-Cronograma.tex}
+
+\input{Secoes/3-Publicacoes-eventos.tex}
+
+%\input{Chapters/1_Introduction.tex}
+
+%\input{Chapters/2_Qualification.tex}
+
+%\input{Chapters/3_Challangers.tex}
+
+% \include{Chapters/BalanceEquationsPore.tex}
+
+% \input{Chapters/ConstitutiveModels.tex}
+
+% \input{Chapters/Liquefaction.tex}
+
+% \input{Chapters/Pseude-Elastic.tex}
+
+% \input{Chapters/SmoothingLaplace.tex}
+
+% \input{Chapters/APENDICE.tex}
+% \input{Chapters/AitkenRelaxation.tex}
+
+%\input{Chapters/4_Timeline.tex}
+
+%\input{Chapters/5_Results.tex}
+
+% Referências bibliográficas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\postextual
+
+\let\oldthebibliography\thebibliography
+\let\endoldthebibliography\endthebibliography
+\renewenvironment{thebibliography}[1]{
+	\begin{oldthebibliography}{#1}
+		\setlength{\itemsep}{0em}
+		\setlength{\parskip}{0.3em}
+		}
+		{
+	\end{oldthebibliography}
+}
+
+\footnotesize{
+	\bibliography{Referencias}}
+
+\end{document}
+

@@ -1,0 +1,71 @@
+% cspell:ignore Cronograma
+\chapter{Cronograma e plano de atividades}
+
+té o momento, tem-se uma ferramenta computacional capaz de simular análises dinâmicas de sólidos porosos utilizando o Método dos Elementos Finitos Posicional, acoplada a uma formulação estabilizada de Navier-Stokes-Brinkman para o escoamento do fluido intersticial, com integração temporal pelo método $\alpha$-generalizado. O modelo elastoplástico com critério de Drucker-Prager e encruamento misto encontra-se em desenvolvimento. Comparando o cronograma proposto originalmente com o atual, conclui-se que as atividades previstas foram cumpridas, com pequenos ajustes que não comprometeram o andamento da pesquisa.
+
+\section{Cronograma}
+
+O cronograma de atividades atualizado está apresentado na Tabela \ref{tab:cronograma}, indicando as atividades já realizadas, em andamento e a realizar, incluindo aquelas previstas para o período de estágio no exterior. As atividades são descritas a seguir:
+
+\begin{enumerate}[label=\alph*),leftmargin=\parindent,labelwidth=\parindent,labelsep=0.3cm,noitemsep]
+    \item\label{disciplinas} Cumprimento dos créditos em disciplinas exigidos ao Doutorado;
+    \item\label{revisao} Revisão bibliográfica distribuída ao longo de todo o trabalho;
+    \item\label{porosidade} Extensão do modelo para contabilização da variação da porosidade e permeabilidade espacial e temporal;
+    \item\label{extensao3d} Extensão do código de poroelasticidade para o caso tridimensional com elementos finitos tetraédricos;
+    \item\label{drucker} Implementação do modelo elastoplástico com critério de Drucker-Prager e encruamento misto para fase sólida e poroelastoplasticidade;
+    \item\label{quali} Redação do texto e realização do exame de qualificação;
+    \item\label{bingham} Implementação e verificação do modelo reológico não-newtoniano de Bingham com o código do PFEM;
+    \item\label{acoplamento} Acoplamento do código PFEM ao programa de poroelasticidade;
+    \item\label{valid} Otimizações do programa, simulação e análise de exemplos numéricos para verificação;
+    \item\label{redacao} Redação da tese, relatórios e artigos.
+\end{enumerate}
+
+\begin{table}[H]
+	\fontsize{11}{14}\selectfont
+	\centering
+	\caption{Cronograma de atividades}
+	{\bfseries
+		\definecolor{realizar}{rgb}{0.4, 0.65, 0.5}
+		\definecolor{pendente}{rgb}{0.4,0.5,0.7}
+		\definecolor{realizado}{rgb}{0.4,0.4,0.4}
+		\begin{tabular}{c|cccc|cccc|cccc|cc|cccc}
+			\hline
+			\Xhline{3\arrayrulewidth}
+			\multirow{2}{*}{\textbf{Atividade}} & \multicolumn{18}{c}{\textbf{Trimestre}}                                                                      \\ \cline{2-19}
+			& 1                                       & 2                     & 3                     & 4                     & 5                     & 6                    & 7                    & 8                    & 9                    & 10                   & 11                   & 12                   & 13                   & 14                   & 15                   & 16    & 17 & 18        \\ \Xhline{3\arrayrulewidth}
+			\ref{disciplinas}                   & \cellcolor{realizado}                   & \cellcolor{realizado} & \cellcolor{realizado} & \cellcolor{realizado} &                       &                      &                      &                      &                      &                      &                      &                      &                      &                      &                      &    &                      &                  \\ \hline
+			\ref{revisao}                       &                                         &                       & \cellcolor{realizado} & \cellcolor{realizado} & \cellcolor{realizado} & \cellcolor{realizado} & \cellcolor{realizado} & \cellcolor{realizado} & \cellcolor{realizado} & \cellcolor{realizado} & \cellcolor{pendente} & \cellcolor{pendente} & \cellcolor{realizar} & \cellcolor{realizar} & \cellcolor{pendente} & \cellcolor{pendente}  & \cellcolor{pendente} &  \\ \hline
+			\ref{porosidade}                   &                                         &                       &                       & \cellcolor{realizado} & \cellcolor{realizado}  & \cellcolor{realizado} &                      &                      &                      &                      &                      &                      &                      &                      &                      &                      &   &  \\ \hline
+			\ref{extensao3d}                     &                                         &                       &                       &                       & \cellcolor{realizado} & \cellcolor{realizado} &                      &                      &                      &                      &                      &                      &                      &                      &                      &                      &   &  \\ \hline
+			\ref{drucker}  &  &  &   &   &   &  &  &  &  \cellcolor{realizado} &  \cellcolor{realizado} &  \cellcolor{pendente}  &  \cellcolor{pendente}  &  &  &  &  \\ \hline
+			\ref{quali}                         &                                         &                       &                       &                       & \cellcolor{realizado} & \cellcolor{realizado} & \cellcolor{realizado} & \cellcolor{realizado} &  \cellcolor{realizado}  &  \cellcolor{realizado}  &  \cellcolor{realizado}  &                      &                      &                      &                      &                      &   &  \\ \hline
+			\ref{bingham}  &    &   &  &   &  &    &    &   &  &  &   &   &  \cellcolor{realizar}  &   \cellcolor{realizar}  &  &  &   &  \\ \hline
+			\ref{acoplamento}  &    &   &  &   &  &    &    &   &  &  &   &   &  \cellcolor{realizar}  &   \cellcolor{realizar}  &  &  &   &  \\ \hline
+			\ref{valid}  &    &   &  &   &  &    &    &   &  &  &   &   &  \cellcolor{realizar}  &   \cellcolor{realizar}  & \cellcolor{pendente} & \cellcolor{pendente} &   &  \\ \hline
+			\ref{redacao} & &   &  &   &  &   &  & &  &   &  &  &  &  & \cellcolor{pendente} & \cellcolor{pendente} & \cellcolor{pendente} & \cellcolor{pendente}\\ \Xhline{3\arrayrulewidth}
+		\end{tabular}
+		\begin{tabular}{llllll}
+			                      &           &                      &            &                      &                                                   \\
+			\cellcolor{realizado} & Realizado & \cellcolor{pendente} & A realizar & \cellcolor{realizar} & A realizar durante o período no exterior (BEPE) \\
+		\end{tabular}
+	}
+	\label{tab:cronograma}
+\end{table}
+
+\section{Plano de atividades}
+
+Para as próximas etapas da pesquisa, de acordo com o cronograma apresentado, espera-se:
+
+\begin{enumerate}
+    \item \textbf{Finalização do modelo elastoplástico com critério de Drucker-Prager}: A implementação do modelo elastoplástico com encruamento misto (isotrópico e cinemático) está em andamento. Nesta etapa, pretende-se concluir o algoritmo de retorno implícito (\textit{return mapping}) e a matriz Hessiana consistente para o caso não associativo. Em seguida, o modelo será verificado por meio de ensaios triaxiais cíclicos, incluindo a análise do \textit{banana effect}.
+
+    \item \textbf{Implementação e verificação do modelo reológico de Bingham no código PFEM}: Durante o estágio no exterior, pretende-se adaptar o código PFEM existente para a incorporação do modelo de Bingham regularizado. Também serão realizados testes e calibrações dos parâmetros reológicos considerando o escoamento de areias liquefeitas. Serão realizados testes preliminares por meio de ensaios de abatimento (\textit{slump test}) para verificação do modelo.
+    
+    \item \textbf{Desenvolvimento da estratégia de acoplamento FEM-PFEM}: Espera-se desenvolver e implementar a estratégia de acoplamento sequencial entre o código FEM poro-elasto-plástico e o código PFEM com Bingham. A transição entre os regimes será definida por critérios físicos baseados na evolução da poropressão e da deformação plástica equivalente, e a transferência das variáveis de estado será realizada por meio de um algoritmo de mapeamento. Essa etapa será iniciada durante o estágio no exterior e continuada após o retorno ao Brasil.
+    
+    \item \textbf{Estágio de pesquisa no exterior}: Conforme informado nesta submissão do BEPE, o outorgado realizará estágio de pesquisa no exterior, no Departamento de Engenharia Civil e Ambiental (DICA) da Politecnico di Milano, sob supervisão do Prof. Massimiliano Cremonesi. O estágio terá duração de seis meses e será focado no acoplamento FEM-PFEM e na transição de fase entre os regimes sólido e fluido. A escolha do grupo se justifica pela expertise em PFEM aplicado a problemas geotécnicos e, em particular, na modelagem de areias liquefeitas como fluidos não newtonianos de Bingham. Mais detalhes sobre a proposta de estágio podem ser vistos no projeto de pesquisa do BEPE submetido junto a este relatório.
+    
+    \item \textbf{Validação e aplicação da ferramenta híbrida}: Após o retorno ao Brasil, espera-se validar a ferramenta híbrida por meio de problemas de referência da literatura, com ênfase em problemas de liquefação induzida por carregamento cíclico. Posteriormente, pretende-se aplicar a ferramenta a problemas práticos de engenharia, como análise de estabilidade de taludes e barragens de rejeitos sujeitos a carregamentos sísmicos.
+    
+    \item \textbf{Redação da tese e elaboração de artigos}: Espera-se finalizar a redação da tese de doutorado e elaborar artigos científicos para publicação em periódicos e congressos, com base nos resultados obtidos ao longo da pesquisa.
+\end{enumerate}

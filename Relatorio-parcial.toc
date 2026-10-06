@@ -1,0 +1,29 @@
+\changetocdepth {4}
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\contentsline {chapter}{\chapternumberline {1}Relatório científico parcial}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Resumo do projeto proposto}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Realizações do período}{3}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Estágio Supervisionado em Docência pelo PAE}{4}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Publicação de artigo em congresso internacional}{4}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Extensão do programa para análise de sólidos porosos}{5}{subsection.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.3.1}Modificações para redução do custo computacional}{5}{subsubsection.1.2.3.1}%
+\contentsline {subsubsection}{\numberline {1.2.3.2}Generalização do código de dinâmica dos sólidos para o caso tridimensional}{5}{subsubsection.1.2.3.2}%
+\contentsline {subsubsection}{\numberline {1.2.3.3}Início da implementação do critério de Drucker-Prager}{6}{subsubsection.1.2.3.3}%
+\contentsline {subsection}{\numberline {1.2.4}Extensão do programa para análise de escoamentos incompressíveis}{6}{subsection.1.2.4}%
+\contentsline {subsubsection}{\numberline {1.2.4.1}Modificações para redução do custo computacional}{6}{subsubsection.1.2.4.1}%
+\contentsline {subsection}{\numberline {1.2.5}Variação da porosidade e permeabilidade espacial e temporal}{6}{subsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.2.6}Exame de qualificação ao doutorado}{7}{subsection.1.2.6}%
+\contentsline {section}{\numberline {1.3}Plano de Gestão de Dados}{7}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Coleta de dados}{7}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Documentação e Metadados}{8}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Ética e Conformidade Legal}{8}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Armazenamento e Backup}{8}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.5}Seleção e Preservação}{9}{subsection.1.3.5}%
+\contentsline {subsection}{\numberline {1.3.6}Responsabilidade}{9}{subsection.1.3.6}%
+\contentsline {chapter}{\chapternumberline {2}Cronograma e plano de atividades}{10}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Cronograma}{10}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Plano de atividades}{11}{section.2.2}%
+\contentsline {chapter}{\chapternumberline {3}Publicações científicas e participações em eventos}{13}{chapter.3}%
+\vspace {\cftbeforepartskip }
+\contentsline {chapter}{Refer\^encias}{14}{chapter*.3}%

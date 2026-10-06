@@ -1,0 +1,32 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Ahrens, Geveci e Law 2005]{ahrens2005paraview}
+\abntrefinfo{Ahrens, Geveci e Law}{AHRENS; GEVECI; LAW}{2005}
+{AHRENS, J.; GEVECI, B.; LAW, C. Paraview: An end-user tool for large data visualization.
+\textbf{The visualization handbook}, v.~717, n.~8, 2005.}
+
+\bibitem[Balay et al. 2023]{petsc-web-page}
+\abntrefinfo{Balay et al.}{BALAY et al.}{2023}
+{BALAY, S. et al. \textbf{{PETS}c {W}eb page}. 2023. \url{https://petsc.org/}.
+Dispon{\'\i}vel em: \url{https://petsc.org/}.}
+
+\bibitem[Chung e Hulbert 1993]{chung1993time}
+\abntrefinfo{Chung e Hulbert}{CHUNG; HULBERT}{1993}
+{CHUNG, J.; HULBERT, G. A time integration algorithm for structural dynamics with improved numerical dissipation: the generalized-$\alpha$ method.
+1993.}
+
+\bibitem[Coda 2003]{coda2003exact}
+\abntrefinfo{Coda}{CODA}{2003}
+{CODA, H.~B. An exact fem geometric non-linear analysis of frames based on position description. In:  \textbf{Proceedings}. [S.l.: s.n.], 2003.}
+
+\bibitem[Geuzaine e Remacle 2009]{geuzaine2009gmsh}
+\abntrefinfo{Geuzaine e Remacle}{GEUZAINE; REMACLE}{2009}
+{GEUZAINE, C.; REMACLE, J.-F. Gmsh: A 3-d finite element mesh generator with built-in pre-and post-processing facilities.
+\textbf{International journal for numerical methods in engineering}, Wiley Online Library, v.~79, n.~11, p. 1309--1331, 2009.}
+
+\end{thebibliography}
